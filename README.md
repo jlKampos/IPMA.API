@@ -5,7 +5,7 @@ This is just a Preview (Work in Progress)
 
 ##### .NET Framework Nuget https://www.nuget.org/packages/IPMA.API.NET
 
-##### .DotNetCore Nuget https://www.nuget.org/packages/IPMA.API.NET
+##### .DotNetCore Nuget https://www.nuget.org/packages/IPMA.API.DotNetCore/
 
 ##### **16-06-2019** 
 splited the project into 2 projects, .NET Framework and Dotnetcore
