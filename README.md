@@ -99,8 +99,9 @@ Install and check this VS Extension https://marketplace.visualstudio.com/items?i
 ### DotNet Publish Solution nuget
 Build -> Release
 Right Click Projet -> Publish -> Configuration : Release; Target Framework netcoreapp*; Target Runtime "Optional" leave Portable
-![alt text](https://github.com/jlKampos/IPMAdotnetCore/blob/master/Image_002.png)
+
+![alt text](https://github.com/jlKampos/IPMA.API/blob/master/Image_002.png)
 
 
 ### Execution under WSL
-![alt text](https://github.com/jlKampos/IPMAdotnetCore/blob/master/Image_001.png)
+![alt text](https://github.com/jlKampos/IPMA.API/blob/master/Image_001.png)
