@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Authors>Luciano Campos</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>C# DotnetCore Implementation of https://api.ipma.pt/#legal</Description>
+    <PackageProjectUrl>https://api.ipma.pt/#legal</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jlKampos/IPMAdotnetCore</RepositoryUrl>
+    <PackageReleaseNotes>First functional API for IPMA services. Functionalities Provided in this release
+In this release all methods are provided in both asynchronous and synchronous
+
+GetLocationsList Will Retrieve all locations provided by IPMA
+
+GetWeatherTypes Will Retrieve all Weather Types eg: Clear sky, Partly cloudy, etc ...
+
+GetMeteoForecatsGlobalIDLocal Will Retrieve a 5 day forecast. for the given GlobalID</PackageReleaseNotes>
+    <PackageLicenseUrl>https://spdx.org/licenses/GPL-3.0-or-later.html</PackageLicenseUrl>
+    <PackageIconUrl>https://upload.wikimedia.org/wikipedia/commons/c/cf/Weather-sun-clouds-rain.svg</PackageIconUrl>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+</Project>
