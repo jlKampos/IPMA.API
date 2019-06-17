@@ -2,9 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace IPMA.API.NET
 {
@@ -21,8 +19,8 @@ namespace IPMA.API.NET
 		{
 			idArea = 0;
 			country = string.Empty;
-			lastSismicActivityDate = DateTime.Now;
-			updateDate = DateTime.Now; ;
+			lastSismicActivityDate = new DateTime();
+			updateDate = new DateTime(); ;
 			owner = string.Empty;
 			seismologyList = new List<IPMASeismicityStruc>();
 		}

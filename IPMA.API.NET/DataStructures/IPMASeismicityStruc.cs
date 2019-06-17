@@ -1,10 +1,6 @@
 ﻿using IPMA.API.NET.Interfaces;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IPMA.API.NET.DataStructures
 {
@@ -33,7 +29,7 @@ namespace IPMA.API.NET.DataStructures
 		{
 			googlemapref = string.Empty;
 			degree = string.Empty;
-			dataUpdate = DateTime.Now;
+			dataUpdate = new DateTime();
 			magType = string.Empty;
 			obsRegion = string.Empty;
 			lon = 0.0;
@@ -42,7 +38,7 @@ namespace IPMA.API.NET.DataStructures
 			tensorRef = string.Empty;
 			sensed = string.Empty;
 			shakemapid = 0;
-			time = DateTime.Now;
+			time = new DateTime();
 			lat = 0.0;
 			shakemapref = string.Empty;
 			local = string.Empty;

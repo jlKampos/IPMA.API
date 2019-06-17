@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 
+
 namespace IPMA.API.NET.DataStructures
 {
 	public class IPMAMeteorologyStruct : IIPMAMeteorologyStruct
@@ -25,7 +26,7 @@ namespace IPMA.API.NET.DataStructures
 			idWeatherType = 0;
 			classWindSpeed = 0;
 			longitude = 0.0;
-			forecastDate = DateTime.Now;
+			forecastDate = new DateTime();
 			latitude = 0.0;
 		}
 
