@@ -1,7 +1,5 @@
 # IPMA.API
 ## C# .NET Framework & DotnetCore Implementation of https://api.ipma.pt/#legal
-#### __NOTE:__ 
-This is just a Preview (Work in Progress)
 
 ##### .NET Framework Nuget https://www.nuget.org/packages/IPMA.API.NET
 
