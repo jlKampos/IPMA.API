@@ -5,8 +5,6 @@ This is just a Preview (Work in Progress)
 
 ##### .NET Framework Nuget https://www.nuget.org/packages/IPMA.API.NET
 
-##### .DotNetCore Nuget https://www.nuget.org/packages/IPMA.API.DotNetCore/
-
 ##### **17-06-2019** 
 Finished Porting all Weather functions to C#
 Added Folders ot Projects for better organization
@@ -48,7 +46,7 @@ All the Rest of the https://api.ipma.pt/#legal functionalities
 
 **DotnetCore  how to**
 ```csharp
-using IPMA.API.*; // It depends NET Framework proj or DotNet
+using IPMA.API.NET;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

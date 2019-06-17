@@ -18,9 +18,9 @@ GetWeatherTypes Will Retrieve all Weather Types eg: Clear sky, Partly cloudy, et
 GetMeteoForecatsGlobalIDLocal Will Retrieve a 5 day forecast. for the given GlobalID</PackageReleaseNotes>
     <PackageLicenseUrl>https://spdx.org/licenses/GPL-3.0-or-later.html</PackageLicenseUrl>
     <PackageIconUrl>https://upload.wikimedia.org/wikipedia/commons/c/cf/Weather-sun-clouds-rain.svg</PackageIconUrl>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
-    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.2.2</AssemblyVersion>
+    <FileVersion>1.1.2.2</FileVersion>
+    <Version>1.1.2</Version>
     <RepositoryType>GIT</RepositoryType>
   </PropertyGroup>
 
