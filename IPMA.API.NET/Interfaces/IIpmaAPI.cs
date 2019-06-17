@@ -1,6 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿
+using System.Threading.Tasks;
 
-namespace IPMA.API.DotNetCore
+namespace IPMA.API.NET.Interfaces
 {
 	internal interface IIpmaAPI
 	{
@@ -23,6 +24,5 @@ namespace IPMA.API.DotNetCore
 		MeteoForecast GetMeteoForecastByDay(int id);
 
 		Task<MeteoForecast> GetMeteoForecastByDayAsync(int id);
-
 	}
 }

@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using IPMA.API.NET.Interfaces;
+using Newtonsoft.Json;
 using System;
 
-namespace IPMA.API.DotNetCore
+namespace IPMA.API.NET.DataStructures
 {
 	public class IPMAMeteorologyStruct : IIPMAMeteorologyStruct
 	{

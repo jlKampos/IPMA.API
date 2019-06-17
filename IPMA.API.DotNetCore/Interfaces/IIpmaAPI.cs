@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace IPMA.API.NET
+namespace IPMA.API.DotNetCore.Interfaces
 {
-	internal interface IIPMAAPI
+	internal interface IIpmaAPI
 	{
 		Locations GetLocationsList();
 
@@ -15,6 +15,14 @@ namespace IPMA.API.NET
 		MeteoForecast GetMeteoForecatsGlobalIDLocal(int id);
 
 		Task<MeteoForecast> GetMeteoForecatsGlobalIDLocalAsync(int id);
+
+		WindSpeedDescription GetWindSpeedDescription();
+
+		Task<WindSpeedDescription> GetWindSpeedDescriptionAsync();
+
+		MeteoForecast GetMeteoForecastByDay(int id);
+
+		Task<MeteoForecast> GetMeteoForecastByDayAsync(int id);
 
 	}
 }

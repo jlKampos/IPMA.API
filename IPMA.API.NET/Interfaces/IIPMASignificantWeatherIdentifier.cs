@@ -1,4 +1,4 @@
-﻿namespace IPMA.API.DotNetCore
+﻿namespace IPMA.API.NET.Interfaces
 {
 	internal interface IIPMASignificantWeatherIdentifier
 	{

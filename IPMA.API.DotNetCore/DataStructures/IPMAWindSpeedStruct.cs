@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using IPMA.API.DotNetCore.Interfaces;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace IPMA.API.DotNetCore
+namespace IPMA.API.DotNetCore.DataStructures
 {
 	public class IPMAWindSpeedStruct : IIPMAWindSpeedStruct
 	{

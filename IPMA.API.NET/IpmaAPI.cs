@@ -1,10 +1,10 @@
-﻿using IPMA.API.DotNetCore.Interfaces;
+﻿using IPMA.API.NET.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace IPMA.API.DotNetCore
+namespace IPMA.API.NET
 {
 	public class IpmaAPI : IIpmaAPI
 	{

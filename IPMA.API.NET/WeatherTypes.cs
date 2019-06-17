@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using IPMA.API.NET.DataStructures;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace IPMA.API.NET
