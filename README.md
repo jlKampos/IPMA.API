@@ -185,6 +185,8 @@ Right Click Projet -> Publish -> Configuration : Release; Target Framework netco
 
 ![alt text](https://github.com/jlKampos/IPMA.API/blob/master/Image_002.png)
 
-
 ### Execution under WSL
 ![alt text](https://github.com/jlKampos/IPMA.API/blob/master/Image_001.png)
+
+### Seismicity Data first element
+![alt text](https://github.com/jlKampos/IPMA.API/blob/master/Image_003.png)
