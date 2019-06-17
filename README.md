@@ -7,6 +7,25 @@ This is just a Preview (Work in Progress)
 
 ##### .DotNetCore Nuget https://www.nuget.org/packages/IPMA.API.DotNetCore/
 
+##### **17-06-2019** 
+Finished Porting all Weather functions to C#
+Added Folders ot Projects for better organization
+
+**Functionalities Provided in this release**
+
+```csharp
+Locations GetLocationsList();
+Task<Locations> GetLocationsListAsync();
+WeatherTypes GetWeatherTypes();
+Task<WeatherTypes> GetWeatherTypesAsync();
+MeteoForecast GetMeteoForecatsGlobalIDLocal(int id);
+Task<MeteoForecast> GetMeteoForecatsGlobalIDLocalAsync(int id);
+WindSpeedDescription GetWindSpeedDescription();
+Task<WindSpeedDescription> GetWindSpeedDescriptionAsync();
+MeteoForecast GetMeteoForecastByDay(int id);
+Task<MeteoForecast> GetMeteoForecastByDayAsync(int id);
+```
+
 ##### **16-06-2019** 
 splited the project into 2 projects, .NET Framework and Dotnetcore
 **Functionalities Provided in this release**
