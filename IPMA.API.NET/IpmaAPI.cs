@@ -267,6 +267,9 @@ namespace IPMA.API.NET
 
 				MeteoForecast weather = new MeteoForecast();
 				weather = JsonConvert.DeserializeObject<MeteoForecast>(GetData(string.Format(m_weatherForecastByDay, id)));
+
+
+
 				return weather;
 			}
 			catch (Exception ex)
