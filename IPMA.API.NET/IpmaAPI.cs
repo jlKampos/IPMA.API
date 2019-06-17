@@ -14,6 +14,7 @@ namespace IPMA.API.NET
 		string m_weatherForecastGlocalID;
 		string m_windspeed;
 		string m_weatherForecastByDay;
+		string m_seismic;
 
 		public IpmaAPI()
 		{
@@ -22,6 +23,7 @@ namespace IPMA.API.NET
 			m_weatherForecastGlocalID = "http://api.ipma.pt/open-data/forecast/meteorology/cities/daily/{0}.json";
 			m_windspeed = "http://api.ipma.pt/open-data/wind-speed-daily-classe.json";
 			m_weatherForecastByDay = " http://api.ipma.pt/open-data/forecast/meteorology/cities/daily/hp-daily-forecast-day{0}.json";
+			m_seismic = "http://api.ipma.pt/open-data/observation/seismic/{0}.json";
 		}
 
 		/// <summary>
@@ -43,9 +45,16 @@ namespace IPMA.API.NET
 				}
 
 			}
+			catch (ArgumentNullException ex)
+			{
+				throw ex;
+			}
+			catch (WebException ex)
+			{
+				throw new WebException(string.Format(IPMAResources.IPMA404Exception, ex.Message, url));
+			}
 			catch (Exception ex)
 			{
-
 				throw ex;
 			}
 		}
@@ -76,7 +85,6 @@ namespace IPMA.API.NET
 			}
 			catch (Exception ex)
 			{
-
 				throw ex;
 			}
 		}
@@ -288,6 +296,54 @@ namespace IPMA.API.NET
 				MeteoForecast weather = new MeteoForecast();
 				weather = JsonConvert.DeserializeObject<MeteoForecast>(await GetDataAsync(string.Format(m_weatherForecastByDay, id)));
 				return weather;
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+		}
+
+		/// <summary>
+		/// Information on seismicity, Arq. Azores, Mainland and Madeira. Integrates 30 days of information. 
+		/// 3 - Arq. Azores
+		/// 7 - Mainland and Madeira
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
+		public SeismicityData GetSeismologyData(int id)
+		{
+			try
+			{
+				if (id != 3 && id != 7)
+				{
+					throw new Exception(string.Format(IPMAResources.IPMASeismicInvliadID, id.ToString()));
+				}
+
+
+				SeismicityData seismicData = new SeismicityData();
+				seismicData = JsonConvert.DeserializeObject<SeismicityData>(GetData(string.Format(m_seismic, id)));
+				return seismicData;
+			}
+			catch (Exception ex)
+			{
+
+				throw ex;
+			}
+		}
+
+		public async Task<SeismicityData> GetSeismologyDataAsync(int id)
+		{
+			try
+			{
+				if (id != 3 && id != 7)
+				{
+					throw new Exception(string.Format(IPMAResources.IPMASeismicInvliadID, id.ToString()));
+				}
+
+				SeismicityData seismicData = new SeismicityData();
+				seismicData = JsonConvert.DeserializeObject<SeismicityData>(await GetDataAsync(string.Format(m_seismic, id)));
+				return seismicData;
 			}
 			catch (Exception ex)
 			{

@@ -77,5 +77,14 @@ namespace IPMA.API.NET {
                 return ResourceManager.GetString("IPMADailyForecastWrongNumberDay", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The seismic identifier must be either 3 for  AZORES  or 7 for  Continent &amp; Madeira, you  provided: {0}.
+        /// </summary>
+        internal static string IPMASeismicInvliadID {
+            get {
+                return ResourceManager.GetString("IPMASeismicInvliadID", resourceCulture);
+            }
+        }
     }
 }

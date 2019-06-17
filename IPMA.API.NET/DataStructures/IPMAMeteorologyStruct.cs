@@ -25,7 +25,7 @@ namespace IPMA.API.NET.DataStructures
 			idWeatherType = 0;
 			classWindSpeed = 0;
 			longitude = 0.0;
-			forecastDate = DateTime.Parse("1900-01-01");
+			forecastDate = DateTime.Now;
 			latitude = 0.0;
 		}
 

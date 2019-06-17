@@ -18,7 +18,7 @@ namespace IPMA.API.NET
 			owner = string.Empty;
 			country = string.Empty;
 			globalIdLocal = 0;
-			dataUpdate = DateTime.Parse("1900-01-01");
+			dataUpdate = DateTime.Now;
 			waether = new List<IPMAMeteorologyStruct>();
 		}
 

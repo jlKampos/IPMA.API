@@ -123,4 +123,7 @@
   <data name="IPMADailyForecastWrongNumberDay" xml:space="preserve">
     <value>The day identifier must be between 0 and 2 you provided: {0}</value>
   </data>
+  <data name="IPMASeismicInvliadID" xml:space="preserve">
+    <value>The seismic identifier must be either 3 for  AZORES  or 7 for  Continent &amp; Madeira, you  provided: {0}</value>
+  </data>
 </root>

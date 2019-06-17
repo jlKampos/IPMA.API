@@ -12,6 +12,8 @@ Added Folders ot Projects for better organization
 **Functionalities Provided in this release**
 
 ```csharp
+SeismicityData GetSeismologyData(int id);
+Task<SeismicityData> GetSeismologyDataAsync(int id);
 Locations GetLocationsList();
 Task<Locations> GetLocationsListAsync();
 WeatherTypes GetWeatherTypes();
@@ -49,15 +51,20 @@ All the Rest of the https://api.ipma.pt/#legal functionalities
 using IPMA.API.NET;
 using System;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
-namespace IPMATesting
+
+
+namespace IPMATestingNET
 {
-	class Program
+	static class Program
 	{
+
 		static void Main(string[] args)
 		{
 			try
 			{
+
 				int cityID = 0;
 
 				IpmaAPI ipma = new IpmaAPI();
@@ -75,7 +82,6 @@ namespace IPMATesting
 				Task<WeatherTypes> callTaskI;
 				WeatherTypes wTypes = null;
 
-
 				callTaskI = Task.Run(() => ipma.GetWeatherTypesAsync());
 
 				callTaskI.Wait();
@@ -84,7 +90,6 @@ namespace IPMATesting
 
 				Task<MeteoForecast> callTaskII;
 				MeteoForecast meteo = null;
-
 
 				callTaskII = Task.Run(() => ipma.GetMeteoForecatsGlobalIDLocalAsync(cityID));
 
@@ -95,23 +100,20 @@ namespace IPMATesting
 				Task<WindSpeedDescription> callTaskIII;
 				WindSpeedDescription winDesc = null;
 
-
 				callTaskIII = Task.Run(() => ipma.GetWindSpeedDescriptionAsync());
 
 				callTaskIII.Wait();
 
 				winDesc = callTaskIII.Result;
 
-
 				Task<MeteoForecast> callTaskIV;
 				MeteoForecast mm = null;
-
 
 				callTaskIV = Task.Run(() => ipma.GetMeteoForecastByDayAsync(2));
 
 				callTaskIV.Wait();
 
-				mm = callTaskIV.Result;
+				mm = callTaskIV.Result; // not used on this demo, just how to get daily Meteo forecast 
 
 				var city = locs.Data.Where(x => x.GlobalIdLocal == cityID).Select(x => x.Local).SingleOrDefault();
 
@@ -130,18 +132,50 @@ namespace IPMATesting
 					Console.WriteLine("Description of Wind Speed: {0}\n", windDescEN);
 
 				}
+
+				Task<SeismicityData> callSeismicity;
+				SeismicityData seismicityData = null;
+
+				callSeismicity = Task.Run(() => ipma.GetSeismologyDataAsync(7));
+
+				callSeismicity.Wait();
+
+				seismicityData = callSeismicity.Result; // not used on this demo, just how to get daily Meteo forecast 
+
+				Console.WriteLine("\n Seismicity");
+
+				foreach (var item in seismicityData.Data)
+				{
+					Type tModelType = item.GetType();
+
+					PropertyInfo[] arrayPropertyInfos = tModelType.GetProperties();
+
+					foreach (PropertyInfo property in arrayPropertyInfos)
+					{
+						Console.WriteLine("Name of Property is:" + property.Name);
+						Console.WriteLine("Value of Property is:" + property.GetValue(item).ToString());
+					}
+					break;
+				}
+
 			}
 
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.Message);
+				if (ex.InnerException != null && !string.IsNullOrEmpty(ex.InnerException.Message))
+				{
+					Console.WriteLine(ex.InnerException.Message);
+				}
+				else
+				{
+					Console.WriteLine(ex.Message);
+				}
 			}
 
 			Console.ReadKey();
 		}
 	}
 }
-
 ```
 
 ### .NET Publish Solution nuget

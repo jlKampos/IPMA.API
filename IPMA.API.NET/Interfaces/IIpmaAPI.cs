@@ -24,5 +24,9 @@ namespace IPMA.API.NET.Interfaces
 		MeteoForecast GetMeteoForecastByDay(int id);
 
 		Task<MeteoForecast> GetMeteoForecastByDayAsync(int id);
+
+		SeismicityData GetSeismologyData(int id);
+
+		Task<SeismicityData> GetSeismologyDataAsync(int id);
 	}
 }
