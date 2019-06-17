@@ -4,18 +4,18 @@ using System.Collections.Generic;
 
 namespace IPMA.API.NET
 {
-	public class Locations
+	public class WindSpeedDescription
 	{
 
 		string owner;
 		string country;
-		List<IPMALocationsStruct> listLocations;
+		List<IPMAWindSpeedStruct> windSpeddData;
 
-		public Locations()
+		public WindSpeedDescription()
 		{
 			owner = string.Empty;
 			country = string.Empty;
-			listLocations = new List<IPMALocationsStruct>();
+			windSpeddData = new List<IPMAWindSpeedStruct>();
 		}
 
 		[JsonProperty("owner")]
@@ -33,10 +33,10 @@ namespace IPMA.API.NET
 		}
 
 		[JsonProperty("data")]
-		public List<IPMALocationsStruct> Data
+		public List<IPMAWindSpeedStruct> Data
 		{
-			get { return listLocations; }
-			internal set { listLocations = value; }
+			get { return windSpeddData; }
+			internal set { windSpeddData = value; }
 		}
 
 	}

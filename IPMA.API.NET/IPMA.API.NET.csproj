@@ -54,23 +54,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IIPMAAPI.cs" />
-    <Compile Include="IIPMALocationsStruct.cs" />
-    <Compile Include="IIPMAMeteorologyStruct.cs" />
-    <Compile Include="IIPMASignificantWeatherIdentifier.cs" />
-    <Compile Include="IPMAAPI.cs" />
-    <Compile Include="IPMALocationsStruct.cs" />
-    <Compile Include="IPMAMeteorologyStruct.cs" />
-    <Compile Include="IPMASignificantWeatherIdentifier.cs" />
+    <Compile Include="DataStructures\IPMAWindSpeedStruct.cs" />
+    <Compile Include="Interfaces\IIpmaAPI.cs" />
+    <Compile Include="Interfaces\IIPMALocationsStruct.cs" />
+    <Compile Include="Interfaces\IIPMAMeteorologyStruct.cs" />
+    <Compile Include="Interfaces\IIPMASignificantWeatherIdentifier.cs" />
+    <Compile Include="Interfaces\IIPMAWindSpeedStruct.cs" />
+    <Compile Include="DataStructures\IPMALocationsStruct.cs" />
+    <Compile Include="DataStructures\IPMAMeteorologyStruct.cs" />
+    <Compile Include="DataStructures\IPMASignificantWeatherIdentifier.cs" />
+    <Compile Include="IpmaAPI.cs" />
+    <Compile Include="IPMAResources.Designer.cs">
+      <DependentUpon>IPMAResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Locations.cs" />
     <Compile Include="MeteoForecast.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeatherTypes.cs" />
+    <Compile Include="WindSpeedDescription.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="license.txt" />
     <None Include="package.nuspec" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="IPMAResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>IPMAResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

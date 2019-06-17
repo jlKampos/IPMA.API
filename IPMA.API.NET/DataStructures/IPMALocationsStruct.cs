@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using IPMA.API.NET.Interfaces;
+using Newtonsoft.Json;
 
-namespace IPMA.API.NET
+namespace IPMA.API.NET.DataStructures
 {
 	public class IPMALocationsStruct : IIPMALocationsStruct
 	{
