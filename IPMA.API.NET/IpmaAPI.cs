@@ -39,7 +39,7 @@ namespace IPMA.API.NET
 				{
 					webClient.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134");
 
-					var results = webClient.DownloadString(String.Format(m_locationsURL));
+					var results = webClient.DownloadString(url);
 
 					return results;
 				}
