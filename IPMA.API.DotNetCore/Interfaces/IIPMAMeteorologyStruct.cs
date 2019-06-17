@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IPMA.API.DotNetCore
+namespace IPMA.API.DotNetCore.Interfaces
 {
 	internal interface IIPMAMeteorologyStruct
 	{

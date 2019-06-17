@@ -1,4 +1,4 @@
-﻿namespace IPMA.API.DotNetCore
+﻿namespace IPMA.API.DotNetCore.Interfaces
 {
 	internal interface IIPMALocationsStruct
 	{

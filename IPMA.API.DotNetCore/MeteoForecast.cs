@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using IPMA.API.DotNetCore.DataStructures;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 

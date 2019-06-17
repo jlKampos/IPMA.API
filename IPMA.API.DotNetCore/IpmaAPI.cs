@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using IPMA.API.DotNetCore.Interfaces;
+using Newtonsoft.Json;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -64,6 +65,14 @@ namespace IPMA.API.DotNetCore
 					return await webClient.DownloadStringTaskAsync(url);
 				}
 
+			}
+			catch (ArgumentNullException ex)
+			{
+				throw ex;
+			}
+			catch (WebException ex)
+			{
+				throw new WebException(string.Format(IPMAResources.IPMA404Exception, ex.Message, url));
 			}
 			catch (Exception ex)
 			{
@@ -243,6 +252,11 @@ namespace IPMA.API.DotNetCore
 		{
 			try
 			{
+				if (id < 0 || id > 2)
+				{
+					throw new Exception(string.Format(IPMAResources.IPMADailyForecastWrongNumberDay, id.ToString()));
+				}
+
 				MeteoForecast weather = new MeteoForecast();
 				weather = JsonConvert.DeserializeObject<MeteoForecast>(GetData(string.Format(m_weatherForecastByDay, id)));
 				return weather;
@@ -266,6 +280,10 @@ namespace IPMA.API.DotNetCore
 		{
 			try
 			{
+				if (id < 0 || id > 2)
+				{
+					throw new Exception(string.Format(IPMAResources.IPMADailyForecastWrongNumberDay, id.ToString()));
+				}
 
 				MeteoForecast weather = new MeteoForecast();
 				weather = JsonConvert.DeserializeObject<MeteoForecast>(await GetDataAsync(string.Format(m_weatherForecastByDay, id)));

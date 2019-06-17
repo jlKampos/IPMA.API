@@ -18,15 +18,15 @@ GetWeatherTypes Will Retrieve all Weather Types eg: Clear sky, Partly cloudy, et
 GetMeteoForecatsGlobalIDLocal Will Retrieve a 5 day forecast. for the given GlobalID</PackageReleaseNotes>
     <PackageLicenseUrl>https://spdx.org/licenses/GPL-3.0-or-later.html</PackageLicenseUrl>
     <PackageIconUrl>https://upload.wikimedia.org/wikipedia/commons/c/cf/Weather-sun-clouds-rain.svg</PackageIconUrl>
-    <AssemblyVersion>1.1.9.9</AssemblyVersion>
-    <FileVersion>1.1.9.9</FileVersion>
-    <Version>1.1.7</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <ShouldCreateLogs>True</ShouldCreateLogs>
-    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
     <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
     <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
@@ -53,6 +53,21 @@ GetMeteoForecatsGlobalIDLocal Will Retrieve a 5 day forecast. for the given Glob
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="IPMAResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IPMAResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="IPMAResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>IPMAResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

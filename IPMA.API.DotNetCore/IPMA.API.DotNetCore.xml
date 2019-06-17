@@ -90,5 +90,31 @@
             <param name="id"></param>
             <returns>Meteo Forecast</returns>
         </member>
+        <member name="T:IPMA.API.DotNetCore.IPMAResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:IPMA.API.DotNetCore.IPMAResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:IPMA.API.DotNetCore.IPMAResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:IPMA.API.DotNetCore.IPMAResources.IPMA404Exception">
+            <summary>
+              Looks up a localized string similar to IPMA WebException {0} at {1}.
+            </summary>
+        </member>
+        <member name="P:IPMA.API.DotNetCore.IPMAResources.IPMADailyForecastWrongNumberDay">
+            <summary>
+              Looks up a localized string similar to The day identifier must be between 0 and 2 you provided: {0}.
+            </summary>
+        </member>
     </members>
 </doc>
