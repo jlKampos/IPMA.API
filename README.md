@@ -4,7 +4,7 @@
 ##### .NET Framework Nuget https://www.nuget.org/packages/IPMA.API.NET
 
 ##### **17-06-2019** 
-Finished Porting all Weather functions to C#
+Finished Porting all Weather & Seismicity Data functions to C#
 Added Folders ot Projects for better organization
 
 **Functionalities Provided in this release**
