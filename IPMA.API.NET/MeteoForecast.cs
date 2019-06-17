@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
+
 namespace IPMA.API.NET
 {
 	public class MeteoForecast
@@ -10,6 +11,7 @@ namespace IPMA.API.NET
 		string owner;
 		string country;
 		int globalIdLocal;
+		DateTime forecastDate;
 		DateTime dataUpdate;
 		List<IPMAMeteorologyStruct> waether;
 
@@ -18,7 +20,8 @@ namespace IPMA.API.NET
 			owner = string.Empty;
 			country = string.Empty;
 			globalIdLocal = 0;
-			dataUpdate = DateTime.Now;
+			dataUpdate = new DateTime();
+			forecastDate = new DateTime();
 			waether = new List<IPMAMeteorologyStruct>();
 		}
 
@@ -50,6 +53,12 @@ namespace IPMA.API.NET
 			internal set { dataUpdate = value; }
 		}
 
+		[JsonProperty("forecastDate")]
+		public DateTime ForecastDate
+		{
+			get { return forecastDate; }
+			internal set { forecastDate = value; }
+		}
 
 		[JsonProperty("data")]
 		public List<IPMAMeteorologyStruct> Data
@@ -57,6 +66,5 @@ namespace IPMA.API.NET
 			get { return waether; }
 			internal set { waether = value; }
 		}
-
 	}
 }
