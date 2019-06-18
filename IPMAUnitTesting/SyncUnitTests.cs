@@ -72,7 +72,7 @@ namespace IPMAUnitTesting
 		}
 
 		[TestMethod]
-		public void GetMeteoForecatsGlobalIDLocalthrowsException()
+		public void GetMeteoForecatsGlobalIDLocalThrowsException()
 		{
 			try
 			{
