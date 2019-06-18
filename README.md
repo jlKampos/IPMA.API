@@ -3,6 +3,9 @@
 
 ##### .NET Framework Nuget https://www.nuget.org/packages/IPMA.API.NET
 
+##### **18-06-2019** 
+Development of Unit Tests
+
 ##### **17-06-2019** 
 Finished Porting all Weather & Seismicity Data functions to C#
 Added Folders ot Projects for better organization
