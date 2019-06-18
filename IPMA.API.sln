@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPMA.API.NET", "IPMA.API.NET\IPMA.API.NET.csproj", "{EC77324E-0157-4B0E-AE0F-B59BAE84881F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPMAUnitTesting", "IPMAUnitTesting\IPMAUnitTesting.csproj", "{2532CB43-1C4C-438A-9E9A-EAB486B43022}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EC77324E-0157-4B0E-AE0F-B59BAE84881F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC77324E-0157-4B0E-AE0F-B59BAE84881F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC77324E-0157-4B0E-AE0F-B59BAE84881F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2532CB43-1C4C-438A-9E9A-EAB486B43022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2532CB43-1C4C-438A-9E9A-EAB486B43022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2532CB43-1C4C-438A-9E9A-EAB486B43022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2532CB43-1C4C-438A-9E9A-EAB486B43022}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

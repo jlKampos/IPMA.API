@@ -89,7 +89,6 @@ namespace IPMA.API.NET
 			}
 		}
 
-
 		/// <summary>
 		/// List of identifiers for the capitals district and islands
 		/// </summary>
@@ -104,7 +103,6 @@ namespace IPMA.API.NET
 			}
 			catch (Exception ex)
 			{
-
 				throw ex;
 			}
 		}
@@ -123,7 +121,6 @@ namespace IPMA.API.NET
 			}
 			catch (Exception ex)
 			{
-
 				throw ex;
 			}
 		}
@@ -142,7 +139,6 @@ namespace IPMA.API.NET
 			}
 			catch (Exception ex)
 			{
-
 				throw ex;
 			}
 		}
@@ -161,7 +157,6 @@ namespace IPMA.API.NET
 			}
 			catch (Exception ex)
 			{
-
 				throw ex;
 			}
 		}
@@ -182,7 +177,6 @@ namespace IPMA.API.NET
 			}
 			catch (Exception ex)
 			{
-
 				throw ex;
 			}
 		}
@@ -223,7 +217,6 @@ namespace IPMA.API.NET
 			}
 			catch (Exception ex)
 			{
-
 				throw ex;
 			}
 		}
