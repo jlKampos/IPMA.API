@@ -3,6 +3,8 @@
 
 ##### .NET Framework Nuget https://www.nuget.org/packages/IPMA.API.NET
 
+##### Install Newtonsoft.Json at the UnitTests Project
+
 ##### **18-06-2019** 
 Development of Unit Tests
 
