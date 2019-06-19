@@ -9,12 +9,12 @@ namespace IPMA.API.NET
 	public class IpmaAPI : IIpmaAPI
 	{
 
-		string m_locationsURL;
-		string m_weatherTypesURL;
-		string m_weatherForecastGlocalID;
-		string m_windspeed;
-		string m_weatherForecastByDay;
-		string m_seismic;
+		readonly string m_locationsURL;
+		readonly string m_weatherTypesURL;
+		readonly string m_weatherForecastGlocalID;
+		readonly string m_windspeed;
+		readonly string m_weatherForecastByDay;
+		readonly string m_seismic;
 
 		public IpmaAPI()
 		{
@@ -45,17 +45,17 @@ namespace IPMA.API.NET
 				}
 
 			}
-			catch (ArgumentNullException ex)
+			catch (ArgumentNullException)
 			{
-				throw ex;
+				throw;
 			}
 			catch (WebException ex)
 			{
 				throw new WebException(string.Format(IPMAResources.IPMA404Exception, ex.Message, url));
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -64,7 +64,7 @@ namespace IPMA.API.NET
 		/// </summary>
 		/// <param name="url">url of service</param>
 		/// <returns>string to be parsed into json</returns>
-		internal async Task<string> GetDataAsync(string url)
+		internal static async Task<string> GetDataAsync(string url)
 		{
 			try
 			{
@@ -75,17 +75,17 @@ namespace IPMA.API.NET
 				}
 
 			}
-			catch (ArgumentNullException ex)
+			catch (ArgumentNullException)
 			{
-				throw ex;
+				throw;
 			}
 			catch (WebException ex)
 			{
 				throw new WebException(string.Format(IPMAResources.IPMA404Exception, ex.Message, url));
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -101,9 +101,9 @@ namespace IPMA.API.NET
 				locationList = JsonConvert.DeserializeObject<Locations>(GetData(m_locationsURL));
 				return locationList;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -116,12 +116,12 @@ namespace IPMA.API.NET
 			try
 			{
 				Locations locationList = new Locations();
-				locationList = JsonConvert.DeserializeObject<Locations>(await GetDataAsync(m_locationsURL));
+				locationList = JsonConvert.DeserializeObject<Locations>(await GetDataAsync(m_locationsURL).ConfigureAwait(false));
 				return locationList;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -137,9 +137,9 @@ namespace IPMA.API.NET
 				wTypes = JsonConvert.DeserializeObject<WeatherTypes>(GetData(m_weatherTypesURL));
 				return wTypes;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -152,12 +152,12 @@ namespace IPMA.API.NET
 			try
 			{
 				WeatherTypes wTypes = new WeatherTypes();
-				wTypes = JsonConvert.DeserializeObject<WeatherTypes>(await GetDataAsync(m_weatherTypesURL));
+				wTypes = JsonConvert.DeserializeObject<WeatherTypes>(await GetDataAsync(m_weatherTypesURL).ConfigureAwait(false));
 				return wTypes;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -175,9 +175,9 @@ namespace IPMA.API.NET
 				weather = JsonConvert.DeserializeObject<MeteoForecast>(GetData(string.Format(m_weatherForecastGlocalID, id)));
 				return weather;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -193,12 +193,12 @@ namespace IPMA.API.NET
 			{
 
 				MeteoForecast weather = new MeteoForecast();
-				weather = JsonConvert.DeserializeObject<MeteoForecast>(await GetDataAsync(string.Format(m_weatherForecastGlocalID, id)));
+				weather = JsonConvert.DeserializeObject<MeteoForecast>(await GetDataAsync(string.Format(m_weatherForecastGlocalID, id)).ConfigureAwait(false));
 				return weather;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -214,9 +214,9 @@ namespace IPMA.API.NET
 				winSpeedDesc = JsonConvert.DeserializeObject<WindSpeedDescription>(GetData(m_windspeed));
 				return winSpeedDesc;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw ex;
+				throw;
 			}
 		}
 
@@ -230,13 +230,13 @@ namespace IPMA.API.NET
 			{
 
 				WindSpeedDescription wTypes = new WindSpeedDescription();
-				wTypes = JsonConvert.DeserializeObject<WindSpeedDescription>(await GetDataAsync(m_windspeed));
+				wTypes = JsonConvert.DeserializeObject<WindSpeedDescription>(await GetDataAsync(m_windspeed).ConfigureAwait(false));
 				return wTypes;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 
-				throw ex;
+				throw;
 			}
 		}
 
@@ -264,10 +264,10 @@ namespace IPMA.API.NET
 
 				return weather;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 
-				throw ex;
+				throw;
 			}
 		}
 
@@ -289,13 +289,13 @@ namespace IPMA.API.NET
 				}
 
 				MeteoForecast weather = new MeteoForecast();
-				weather = JsonConvert.DeserializeObject<MeteoForecast>(await GetDataAsync(string.Format(m_weatherForecastByDay, id)));
+				weather = JsonConvert.DeserializeObject<MeteoForecast>(await GetDataAsync(string.Format(m_weatherForecastByDay, id)).ConfigureAwait(false));
 				return weather;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 
-				throw ex;
+				throw;
 			}
 		}
 
@@ -320,10 +320,10 @@ namespace IPMA.API.NET
 				seismicData = JsonConvert.DeserializeObject<SeismicityData>(GetData(string.Format(m_seismic, id)));
 				return seismicData;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 
-				throw ex;
+				throw;
 			}
 		}
 
@@ -337,13 +337,12 @@ namespace IPMA.API.NET
 				}
 
 				SeismicityData seismicData = new SeismicityData();
-				seismicData = JsonConvert.DeserializeObject<SeismicityData>(await GetDataAsync(string.Format(m_seismic, id)));
+				seismicData = JsonConvert.DeserializeObject<SeismicityData>(await GetDataAsync(string.Format(m_seismic, id)).ConfigureAwait(false));
 				return seismicData;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-
-				throw ex;
+				throw;
 			}
 		}
 	}
