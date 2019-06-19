@@ -1,6 +1,7 @@
 # IPMA.API
 ### C# .NET Framework & DotnetCore Implementation of https://api.ipma.pt/#legal
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7a17cf464e76452f908a5bccf66d1feb)](https://app.codacy.com/app/jlKampos/IPMA.API?utm_source=github.com&utm_medium=referral&utm_content=jlKampos/IPMA.API&utm_campaign=Badge_Grade_Settings)
 [![.NET Framework Nuget](https://img.shields.io/nuget/v/IPMA.API.NET.svg?color=Green&label=.NET%20Framework%20Nuget&logo=nuget&logoColor=Green&style=popout-square)](https://www.nuget.org/packages/IPMA.API.NET/) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-green.svg?style=popout-square&logo=gnu&logoColor=Black)](https://www.gnu.org/licenses/lgpl-3.0)
 
 ##### **18-06-2019** 
