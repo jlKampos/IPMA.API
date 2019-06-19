@@ -198,7 +198,6 @@ namespace IPMA.API.NET
 			}
 			catch (Exception ex)
 			{
-
 				throw ex;
 			}
 		}
