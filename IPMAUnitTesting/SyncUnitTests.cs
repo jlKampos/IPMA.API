@@ -104,5 +104,36 @@ namespace IPMAUnitTesting
 				Assert.Fail(ex.Message);
 			}
 		}
+
+		[TestMethod]
+		public void GetMeteoForecastByDayTest()
+		{
+			try
+			{
+				IpmaAPI m_ipma = new IpmaAPI();
+				var locs = m_ipma.GetLocationsList();
+				var city = locs.Data.Single(x => x.Local.Equals("Braga"));
+				var meteo = m_ipma.GetMeteoForecastByDay(0);
+
+				Assert.IsNotNull(meteo.Data);
+				Assert.IsNotNull(meteo.ForecastDate);
+
+				meteo = m_ipma.GetMeteoForecastByDay(1);
+
+				Assert.IsNotNull(meteo.Data);
+				Assert.IsNotNull(meteo.ForecastDate);
+
+				meteo = m_ipma.GetMeteoForecastByDay(2);
+
+				Assert.IsNotNull(meteo.Data);
+				Assert.IsNotNull(meteo.ForecastDate);
+
+			}
+			catch (System.Exception ex)
+			{
+				Trace.WriteLine(ex.Message);
+				Assert.Fail(ex.Message);
+			}
+		}
 	}
 }
