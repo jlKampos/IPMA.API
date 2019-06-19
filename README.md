@@ -1,7 +1,7 @@
 # IPMA.API
 ### C# .NET Framework & DotnetCore Implementation of https://api.ipma.pt/#legal
 
-##### .NET Framework Nuget https://www.nuget.org/packages/IPMA.API.NET
+#### .NET Framework Nuget [![.NET Framework Nuget](https://img.shields.io/nuget/v/IPMA.API.NET.svg)](https://www.nuget.org/packages/IPMA.API.NET/)
 
 ##### **18-06-2019** 
 Development of Unit Tests
