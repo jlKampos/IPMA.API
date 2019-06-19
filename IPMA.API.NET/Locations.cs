@@ -7,7 +7,7 @@ namespace IPMA.API.NET
 	public class Locations
 	{
 
-		string owner;
+		readonly string owner;
 		string country;
 		List<IPMALocationsStruct> listLocations;
 

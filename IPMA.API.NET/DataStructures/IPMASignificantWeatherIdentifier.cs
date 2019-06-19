@@ -13,7 +13,7 @@ namespace IPMA.API.NET.DataStructures
 		public IPMASignificantWeatherIdentifier()
 		{
 			descIdWeatherTypeEN = string.Empty;
-			descIdWeatherTypePT = string.Empty; ;
+			descIdWeatherTypePT = string.Empty;
 			idWeatherType = 0;
 		}
 
