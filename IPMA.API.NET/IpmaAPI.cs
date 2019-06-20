@@ -45,10 +45,6 @@ namespace IPMA.API.NET
 				}
 
 			}
-			catch (ArgumentNullException)
-			{
-				throw;
-			}
 			catch (WebException ex)
 			{
 				throw new WebException(string.Format(IPMAResources.IPMA404Exception, ex.Message, url));
@@ -74,10 +70,6 @@ namespace IPMA.API.NET
 					return await webClient.DownloadStringTaskAsync(url);
 				}
 
-			}
-			catch (ArgumentNullException)
-			{
-				throw;
 			}
 			catch (WebException ex)
 			{
