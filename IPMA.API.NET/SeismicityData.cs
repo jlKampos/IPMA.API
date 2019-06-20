@@ -20,7 +20,7 @@ namespace IPMA.API.NET
 			idArea = 0;
 			country = string.Empty;
 			lastSismicActivityDate = new DateTime();
-			updateDate = new DateTime(); ;
+			updateDate = new DateTime();
 			owner = string.Empty;
 			seismologyList = new List<IPMASeismicityStruc>();
 		}
