@@ -9,4 +9,4 @@ before_build:
 test:
   assemblies:
     only:
-      - "'**\\*.UnitTests.dll"
+      - "'**\\*IPMAUnitTesting.dll"
