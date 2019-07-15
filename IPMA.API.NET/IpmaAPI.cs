@@ -334,12 +334,16 @@ namespace IPMA.API.NET
 			{
 				if (id != 3 && id != 7)
 				{
-					throw new Exception(string.Format(IPMAResources.IPMASeismicInvliadID, id.ToString()));
+					throw new ExceptionIPMASeismicInvliadID(id.ToString());
 				}
 
 				SeismicityData seismicData = new SeismicityData();
 				seismicData = JsonConvert.DeserializeObject<SeismicityData>(await GetDataAsync(string.Format(m_seismic, id)).ConfigureAwait(false));
 				return seismicData;
+			}
+			catch (ExceptionIPMASeismicInvliadID)
+			{
+				throw;
 			}
 			catch (Exception)
 			{

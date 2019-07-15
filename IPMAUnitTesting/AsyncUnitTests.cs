@@ -1,4 +1,5 @@
 ﻿using IPMA.API.NET;
+using IPMA.API.NET.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -133,7 +134,7 @@ namespace IPMAUnitTesting
 				Assert.IsNotNull(meteo.Data);
 				Assert.IsNotNull(meteo.ForecastDate);
 
-				await Assert.ThrowsExceptionAsync<Exception>(() => m_ipma.GetMeteoForecastByDayAsync(3));
+				await Assert.ThrowsExceptionAsync<ExceptionIPMADailyForecastWrongNumberDay>(() => m_ipma.GetMeteoForecastByDayAsync(3));
 			}
 			catch (System.Exception ex)
 			{
@@ -161,7 +162,7 @@ namespace IPMAUnitTesting
 				Assert.IsNotNull(seismicity.IDArea);
 				Assert.IsNotNull(seismicity.LastSismicActivityDate);
 
-				await Assert.ThrowsExceptionAsync<Exception>(() => m_ipma.GetSeismologyDataAsync(1));
+				await Assert.ThrowsExceptionAsync<ExceptionIPMASeismicInvliadID>(() => m_ipma.GetSeismologyDataAsync(1));
 			}
 			catch (System.Exception ex)
 			{
