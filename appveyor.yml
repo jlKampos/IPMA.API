@@ -5,3 +5,9 @@ configuration: Release
 before_build:
   - cmd: dotnet restore
   - cmd: nuget restore
+
+  test:
+  # only assemblies to test
+  assemblies:
+    only:
+      - '**\*.UnitTests.dll'
