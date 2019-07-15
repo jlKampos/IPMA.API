@@ -6,6 +6,7 @@ before_build:
   - cmd: dotnet restore
   - cmd: nuget restore
 
-  test:
-    assemblies:
-      - '**\*.UnitTests.dll'
+test:
+  assemblies:
+    only:
+      - "'**\\*.UnitTests.dll"
