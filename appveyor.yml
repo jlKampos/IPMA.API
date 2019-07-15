@@ -4,3 +4,4 @@ configuration: Release
 
 before_build:
   - cmd: dotnet restore
+  - cmd: nuget restore
