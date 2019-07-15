@@ -185,7 +185,6 @@ namespace IPMA.API.NET
 		{
 			try
 			{
-
 				MeteoForecast weather = new MeteoForecast();
 				weather = JsonConvert.DeserializeObject<MeteoForecast>(await GetDataAsync(string.Format(m_weatherForecastGlocalID, id)).ConfigureAwait(false));
 				return weather;
@@ -222,7 +221,6 @@ namespace IPMA.API.NET
 		{
 			try
 			{
-
 				WindSpeedDescription wTypes = new WindSpeedDescription();
 				wTypes = JsonConvert.DeserializeObject<WindSpeedDescription>(await GetDataAsync(m_windspeed).ConfigureAwait(false));
 				return wTypes;
