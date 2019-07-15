@@ -13,5 +13,12 @@ namespace IPMA.API.NET.Exceptions
 		}
 	}
 
+	public class ExceptionIPMADailyForecastWrongNumberDay : Exception
+	{
+		public ExceptionIPMADailyForecastWrongNumberDay(string message) : base(string.Format(IPMAResources.IPMADailyForecastWrongNumberDay, message))
+		{
+		}
+	}
+
 }
 

@@ -248,15 +248,17 @@ namespace IPMA.API.NET
 			{
 				if (id < 0 || id > 2)
 				{
-					throw new Exception(string.Format(IPMAResources.IPMADailyForecastWrongNumberDay, id.ToString()));
+					throw new ExceptionIPMADailyForecastWrongNumberDay(id.ToString());
 				}
 
 				MeteoForecast weather = new MeteoForecast();
 				weather = JsonConvert.DeserializeObject<MeteoForecast>(GetData(string.Format(m_weatherForecastByDay, id)));
 
-
-
 				return weather;
+			}
+			catch (ExceptionIPMADailyForecastWrongNumberDay)
+			{
+				throw;
 			}
 			catch (Exception)
 			{
@@ -279,12 +281,16 @@ namespace IPMA.API.NET
 			{
 				if (id < 0 || id > 2)
 				{
-					throw new Exception(string.Format(IPMAResources.IPMADailyForecastWrongNumberDay, id.ToString()));
+					throw new ExceptionIPMADailyForecastWrongNumberDay(id.ToString());
 				}
 
 				MeteoForecast weather = new MeteoForecast();
 				weather = JsonConvert.DeserializeObject<MeteoForecast>(await GetDataAsync(string.Format(m_weatherForecastByDay, id)).ConfigureAwait(false));
 				return weather;
+			}
+			catch (ExceptionIPMADailyForecastWrongNumberDay)
+			{
+				throw;
 			}
 			catch (Exception)
 			{

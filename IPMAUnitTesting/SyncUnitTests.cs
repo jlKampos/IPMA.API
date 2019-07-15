@@ -219,7 +219,7 @@ namespace IPMAUnitTesting
 				Assert.IsNotNull(meteo.Data);
 				Assert.IsNotNull(meteo.ForecastDate);
 
-				Assert.ThrowsException<Exception>(() => m_ipma.GetMeteoForecastByDay(3));
+				Assert.ThrowsException<ExceptionIPMADailyForecastWrongNumberDay>(() => m_ipma.GetMeteoForecastByDay(3));
 			}
 			catch (System.Exception ex)
 			{
