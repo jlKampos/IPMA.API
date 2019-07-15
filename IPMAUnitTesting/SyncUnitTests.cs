@@ -1,4 +1,5 @@
 using IPMA.API.NET;
+using IPMA.API.NET.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -266,7 +267,7 @@ namespace IPMAUnitTesting
 				Assert.IsNotNull(seismicity.IDArea);
 				Assert.IsNotNull(seismicity.LastSismicActivityDate);
 
-				Assert.ThrowsException<Exception>(() => m_ipma.GetSeismologyData(1));
+				Assert.ThrowsException<ExceptionIPMASeismicInvliadID>(() => m_ipma.GetSeismologyData(1));
 			}
 			catch (System.Exception ex)
 			{

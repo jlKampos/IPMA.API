@@ -1,4 +1,5 @@
-﻿using IPMA.API.NET.Interfaces;
+﻿using IPMA.API.NET.Exceptions;
+using IPMA.API.NET.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Net;
@@ -15,6 +16,7 @@ namespace IPMA.API.NET
 		readonly string m_windspeed;
 		readonly string m_weatherForecastByDay;
 		readonly string m_seismic;
+		readonly static string m_userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0";
 
 		public IpmaAPI()
 		{
@@ -31,13 +33,13 @@ namespace IPMA.API.NET
 		/// </summary>
 		/// <param name="url">url of service</param>
 		/// <returns>string to be parsed into json</returns>
-		internal string GetData(string url)
+		internal static string GetData(string url)
 		{
 			try
 			{
 				using (WebClient webClient = new WebClient())
 				{
-					webClient.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134");
+					webClient.Headers.Add("user-agent", m_userAgent);
 
 					var results = webClient.DownloadString(url);
 
@@ -66,7 +68,7 @@ namespace IPMA.API.NET
 			{
 				using (WebClient webClient = new WebClient())
 				{
-					webClient.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134");
+					webClient.Headers.Add("user-agent", m_userAgent);
 					return await webClient.DownloadStringTaskAsync(url);
 				}
 
@@ -304,17 +306,18 @@ namespace IPMA.API.NET
 			{
 				if (id != 3 && id != 7)
 				{
-					throw new Exception(string.Format(IPMAResources.IPMASeismicInvliadID, id.ToString()));
+					throw new ExceptionIPMASeismicInvliadID(id.ToString());
 				}
-
-
 				SeismicityData seismicData = new SeismicityData();
 				seismicData = JsonConvert.DeserializeObject<SeismicityData>(GetData(string.Format(m_seismic, id)));
 				return seismicData;
 			}
+			catch (ExceptionIPMASeismicInvliadID)
+			{
+				throw;
+			}
 			catch (Exception)
 			{
-
 				throw;
 			}
 		}

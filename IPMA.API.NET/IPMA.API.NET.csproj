@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="DataStructures\IPMASeismicityStruc.cs" />
     <Compile Include="DataStructures\IPMAWindSpeedStruct.cs" />
+    <Compile Include="Exceptions\IPMAExceptions.cs" />
     <Compile Include="Interfaces\IIpmaAPI.cs" />
     <Compile Include="Interfaces\IIPMALocationsStruct.cs" />
     <Compile Include="Interfaces\IIPMAMeteorologyStruct.cs" />
@@ -92,5 +93,6 @@
       <LastGenOutput>IPMAResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
