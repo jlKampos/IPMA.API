@@ -1,4 +1,4 @@
-# IPMA.API [![Codacy Badge](https://api.codacy.com/project/badge/Grade/70a0d4a918124204a7afc0b1bd8a1efd)](https://www.codacy.com/app/jlKampos/IPMA.API?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jlKampos/IPMA.API&amp;utm_campaign=Badge_Grade) [![Build status](https://ci.appveyor.com/api/projects/status/vx6jckkt15ptqvsq/branch/master?svg=true)](https://ci.appveyor.com/project/jlKampos/ipma-api/branch/master)
+# IPMA.API [![Codacy Badge](https://api.codacy.com/project/badge/Grade/70a0d4a918124204a7afc0b1bd8a1efd)](https://www.codacy.com/app/jlKampos/IPMA.API?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jlKampos/IPMA.API&amp;utm_campaign=Badge_Grade)
 ### C# .NET Framework & DotnetCore Implementation of https://api.ipma.pt/#legal
 [![.NET Framework Nuget](https://img.shields.io/nuget/v/IPMA.API.NET.svg?color=Green&label=.NET%20Framework%20Nuget&logo=nuget&logoColor=Green&style=popout-square)](https://www.nuget.org/packages/IPMA.API.NET/) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-green.svg?style=popout-square&logo=gnu&logoColor=Black)](https://www.gnu.org/licenses/lgpl-3.0) 
 
